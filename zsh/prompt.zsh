@@ -40,9 +40,9 @@ unpushed () {
 need_push () {
   if [[ $(unpushed) == "" ]]
   then
-    echo " "
+    echo ""
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} commits"
   fi
 }
 
@@ -67,11 +67,15 @@ rb_prompt() {
   fi
 }
 
+message() {
+  echo "There is a slight breeze from the south."
+}
+
 directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(rb_prompt)You find yourself in $(directory_name) $(git_dirty)$(need_push).\n$(message)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
