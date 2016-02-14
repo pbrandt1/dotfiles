@@ -20,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -75,7 +75,21 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)You find yourself in $(directory_name) $(git_dirty)$(need_push).\n$(message)\n› '
+hostname() {
+  echo "%{$fg_bold[cyan]%}%m%{$reset_color%}"
+}
+
+git_message() {
+  d="$(git_dirty)" || "wow"
+  if [[ -n "$d" ]]
+  then
+    echo -e "A strange sign to the left is inscribed with ${d}\n"
+  else
+    echo "A strange silence fills the hall."
+  fi
+}
+
+export PROMPT=$'\nYou find yourself in $(directory_name) on $(hostname)\n$(git_message)\n$(message)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
