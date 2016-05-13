@@ -7,6 +7,8 @@ fi
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+export NODE_ENV='development'
+
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
@@ -46,3 +48,11 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+export PATH=$PATH:/data/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/peter/Downloads/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/peter/Downloads/google-cloud-sdk/completion.zsh.inc'
