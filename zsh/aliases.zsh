@@ -1,6 +1,11 @@
 alias reload!='. ~/.zshrc'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+
 # typos
 alias sl='ls'
 alias ndoe='node'
@@ -19,5 +24,6 @@ alias wow='git status'
 alias such=git
 alias very=git
 
-# shortcuts
-
+# shortcutst
+alias notap='synclient TapButton1=0'
+alias tap='synclient TapButton1=1'
