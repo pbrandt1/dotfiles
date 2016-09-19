@@ -14,6 +14,9 @@ alias vat='cat'
 # disk utils
 alias ducks='du -k . | sort -n | tail -10'
 
+# edit previously saved file
+alias vip='vi `ls -t | head -1`'
+
 #linux to mac
 alias tac='gtac'
 

@@ -49,5 +49,5 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
-export PATH=$PATH:/data/bin
+export PATH=$PATH:/data/bin:/data/local/node/bin
 
