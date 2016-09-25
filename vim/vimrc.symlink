@@ -14,13 +14,17 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['standard']
-autocmd bufwritepost *.js silent !standard-format -w %
-set autoread
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_x = 0
+"let g:syntastic_javascript_checkers = ['standard']
+"autocmd bufwritepost *.js silent !standard-format -w % >/dev/null
+"set autoread
 
 let g:javascript_plugin_jsdoc = 1
 " let g:javascript_conceal_arrow_function = "⇒"
+
+" Search color scheme, also affects syntastic
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
