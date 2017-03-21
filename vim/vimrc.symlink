@@ -59,3 +59,15 @@ inoremap <Down> <C-o>gj
 " Spell check .txt
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal spell
+set spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi clear SpellCap
+hi SpellCap cterm=underline
+hi clear SpellRare
+hi SpellRare cterm=underline
+hi clear SpellLocal
+hi SpellLocal cterm=underline
+
+" Load vimrc's in each directory
+let g:localrc_filename='vimrc.local'
