@@ -1,0 +1,9 @@
+{
+  "name": "laptop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "xinput": "^0.5.0"
+  }
+}
